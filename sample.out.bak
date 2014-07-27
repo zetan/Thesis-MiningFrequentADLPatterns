@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section*.3}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.4}{Related Work}{}% 2
+\BOOKMARK [1][-]{section*.5}{Approach Overview}{}% 3
+\BOOKMARK [2][-]{section*.6}{Design Concerns}{section*.5}% 4
+\BOOKMARK [2][-]{section*.7}{Framework of Our Approach}{section*.5}% 5
+\BOOKMARK [1][-]{section*.8}{Raw Segmentation with LDA}{}% 6
+\BOOKMARK [2][-]{section*.9}{Topic Model with LDA}{section*.8}% 7
+\BOOKMARK [2][-]{section*.10}{Generating Motion-Document}{section*.8}% 8
+\BOOKMARK [2][-]{section*.11}{Segmentation of Acceleration Stream based on LDA}{section*.8}% 9
+\BOOKMARK [1][-]{section*.12}{Learning a Classifier}{}% 10
+\BOOKMARK [2][-]{section*.13}{Training Samples}{section*.12}% 11
+\BOOKMARK [2][-]{section*.14}{Learn a Classifier with Semi-Supervised Learning}{section*.12}% 12
+\BOOKMARK [1][-]{section*.15}{Experiments}{}% 13
+\BOOKMARK [2][-]{section*.16}{Datasets}{section*.15}% 14
+\BOOKMARK [2][-]{section*.17}{ADL Discovery}{section*.15}% 15
+\BOOKMARK [2][-]{section*.18}{New Patterns Discovery on New Data}{section*.15}% 16
+\BOOKMARK [2][-]{section*.19}{Recognize ADLs}{section*.15}% 17
+\BOOKMARK [1][-]{section*.20}{Conclusion and Future Work}{}% 18
+\BOOKMARK [1][-]{section*.21}{REFERENCES }{}% 19

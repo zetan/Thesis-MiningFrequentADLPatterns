@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{randell2000context}
+Blei, D.~M.
+\newblock Probabilistic topic models.
+\newblock {\em Communications of the ACM 55}, 4 (2012), 77--84.
+
+\bibitem{chikhaoui2012adr}
+Chikhaoui, B., Wang, S., and Pigot, H.
+\newblock Adr-splda: Activity discovery and recognition by combining sequential
+  patterns and latent dirichlet allocation.
+\newblock {\em Pervasive and Mobile Computing 8}, 6 (2012), 845--862.
+
+\bibitem{cook2013activity}
+Cook, D.~J., Krishnan, N.~C., and Rashidi, P.
+\newblock Activity discovery and activity recognition: A new partnership.
+\newblock {\em Cybernetics, IEEE Transactions on 43}, 3 (2013), 820--828.
+
+\bibitem{huynh2008discovery}
+Huynh, T., Fritz, M., and Schiele, B.
+\newblock Discovery of activity patterns using topic models.
+\newblock In {\em Proceedings of the 10th international conference on
+  Ubiquitous computing}, ACM (2008), 10--19.
+
+\bibitem{huynh2006unsupervised}
+Huynh, T., and Schiele, B.
+\newblock Unsupervised discovery of structure in activity data using multiple
+  eigenspaces.
+\newblock In {\em Location-and Context-Awareness}. Springer, 2006, 151--167.
+
+\bibitem{kwapisz2011activity}
+Kwapisz, J.~R., Weiss, G.~M., and Moore, S.~A.
+\newblock Activity recognition using cell phone accelerometers.
+\newblock {\em ACM SigKDD Explorations Newsletter 12}, 2 (2011), 74--82.
+
+\bibitem{liang1998real}
+Liang, R.-H., and Ouhyoung, M.
+\newblock A real-time continuous gesture recognition system for sign language.
+\newblock In {\em Automatic Face and Gesture Recognition, 1998. Proceedings.
+  Third IEEE International Conference on}, IEEE (1998), 558--567.
+
+\bibitem{mantyjarvi2001recognizing}
+Mantyjarvi, J., Himberg, J., and Seppanen, T.
+\newblock Recognizing human motion with multiple acceleration sensors.
+\newblock In {\em Systems, Man, and Cybernetics, 2001 IEEE International
+  Conference on}, vol.~2, IEEE (2001), 747--752.
+
+\bibitem{minnen2006discovering}
+Minnen, D., Starner, T., Essa, I., and Isbell, C.
+\newblock Discovering characteristic actions from on-body sensor data.
+\newblock In {\em Wearable computers, 2006 10th IEEE international symposium
+  on}, IEEE (2006), 11--18.
+
+\bibitem{rai2012mining}
+Rai, A., Yan, Z., Chakraborty, D., Wijaya, T.~K., and Aberer, K.
+\newblock Mining complex activities in the wild via a single smartphone
+  accelerometer.
+\newblock In {\em Proceedings of the Sixth International Workshop on Knowledge
+  Discovery from Sensor Data}, ACM (2012), 43--51.
+
+\bibitem{stikic2009activity}
+Stikic, M., and Schiele, B.
+\newblock Activity recognition from sparsely labeled data using multi-instance
+  learning.
+\newblock In {\em Location and Context Awareness}. Springer, 2009, 156--173.
+
+\bibitem{stikic2008exploring}
+Stikic, M., Van~Laerhoven, K., and Schiele, B.
+\newblock Exploring semi-supervised and active learning for activity
+  recognition.
+\newblock In {\em Wearable Computers, 2008. ISWC 2008. 12th IEEE International
+  Symposium on}, IEEE (2008), 81--88.
+
+\bibitem{wang2009human}
+Wang, Y., and Mori, G.
+\newblock Human action recognition by semilatent topic models.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions on
+  31}, 10 (2009), 1762--1774.
+
+\end{thebibliography}

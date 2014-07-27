@@ -1,0 +1,215 @@
+@inproceedings{rai2012mining,
+  title={Mining complex activities in the wild via a single smartphone accelerometer},
+  author={Rai, Angshu and Yan, Zhixian and Chakraborty, Dipanjan and Wijaya, Tri Kurniawan and Aberer, Karl},
+  booktitle={Proceedings of the Sixth International Workshop on Knowledge Discovery from Sensor Data},
+  pages={43--51},
+  year={2012},
+  organization={ACM}
+}
+
+@inproceedings{stikic2008exploring,
+  title={Exploring semi-supervised and active learning for activity recognition},
+  author={Stikic, Maja and Van Laerhoven, Kristof and Schiele, Bernt},
+  booktitle={Wearable Computers, 2008. ISWC 2008. 12th IEEE International Symposium on},
+  pages={81--88},
+  year={2008},
+  organization={IEEE}
+}
+
+@incollection{huynh2006unsupervised,
+  title={Unsupervised discovery of structure in activity data using multiple eigenspaces},
+  author={Huynh, T{\^a}m and Schiele, Bernt},
+  booktitle={Location-and Context-Awareness},
+  pages={151--167},
+  year={2006},
+  publisher={Springer}
+}
+
+@inproceedings{minnen2006discovering,
+  title={Discovering characteristic actions from on-body sensor data},
+  author={Minnen, David and Starner, Thad and Essa, Irfan and Isbell, Charles},
+  booktitle={Wearable computers, 2006 10th IEEE international symposium on},
+  pages={11--18},
+  year={2006},
+  organization={IEEE}
+}
+
+@inproceedings{huynh2008discovery,
+  title={Discovery of activity patterns using topic models},
+  author={Huynh, T{\^a}m and Fritz, Mario and Schiele, Bernt},
+  booktitle={Proceedings of the 10th international conference on Ubiquitous computing},
+  pages={10--19},
+  year={2008},
+  organization={ACM}
+}
+
+@article{chikhaoui2012adr,
+  title={ADR-SPLDA: Activity discovery and recognition by combining sequential patterns and latent Dirichlet allocation},
+  author={Chikhaoui, Belkacem and Wang, Shengrui and Pigot, H{\'e}l{\`e}ne},
+  journal={Pervasive and Mobile Computing},
+  volume={8},
+  number={6},
+  pages={845--862},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@incollection{stikic2009activity,
+  title={Activity recognition from sparsely labeled data using multi-instance learning},
+  author={Stikic, Maja and Schiele, Bernt},
+  booktitle={Location and Context Awareness},
+  pages={156--173},
+  year={2009},
+  publisher={Springer}
+}
+
+@article{cook2013activity,
+  title={Activity discovery and activity recognition: A new partnership},
+  author={Cook, Diane J and Krishnan, Narayanan C and Rashidi, Parisa},
+  journal={Cybernetics, IEEE Transactions on},
+  volume={43},
+  number={3},
+  pages={820--828},
+  year={2013},
+  publisher={IEEE}
+}
+
+@article{incel2013review,
+  title={A review and taxonomy of activity recognition on mobile phones},
+  author={Incel, Ozlem Durmaz and Kose, Mustafa and Ersoy, Cem},
+  journal={BioNanoScience},
+  volume={3},
+  number={2},
+  pages={145--171},
+  year={2013},
+  publisher={Springer}
+}
+
+@article{randell2000context,
+  title={Probabilistic topic models},
+  author={Blei, David M},
+  journal={Communications of the ACM},
+  volume={55},
+  number={4},
+  pages={77--84},
+  year={2012},
+  publisher={ACM}
+}
+
+@article{wang2009human,
+  title={Human action recognition by semilatent topic models},
+  author={Wang, Yang and Mori, Greg},
+  journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  volume={31},
+  number={10},
+  pages={1762--1774},
+  year={2009},
+  publisher={IEEE}
+}
+
+@inproceedings{liang1998real,
+  title={A real-time continuous gesture recognition system for sign language},
+  author={Liang, Rung-Huei and Ouhyoung, Ming},
+  booktitle={Automatic Face and Gesture Recognition, 1998. Proceedings. Third IEEE International Conference on},
+  pages={558--567},
+  year={1998},
+  organization={IEEE}
+}
+
+@inproceedings{schuldt2004recognizing,
+  title={Recognizing human actions: a local SVM approach},
+  author={Schuldt, Christian and Laptev, Ivan and Caputo, Barbara},
+  booktitle={Pattern Recognition, 2004. ICPR 2004. Proceedings of the 17th International Conference on},
+  volume={3},
+  pages={32--36},
+  year={2004},
+  organization={IEEE}
+}
+
+@article{kwapisz2011activity,
+  title={Activity recognition using cell phone accelerometers},
+  author={Kwapisz, Jennifer R and Weiss, Gary M and Moore, Samuel A},
+  journal={ACM SigKDD Explorations Newsletter},
+  volume={12},
+  number={2},
+  pages={74--82},
+  year={2011},
+  publisher={ACM}
+}
+
+@inproceedings{mantyjarvi2001recognizing,
+  title={Recognizing human motion with multiple acceleration sensors},
+  author={Mantyjarvi, Jani and Himberg, Johan and Seppanen, Tapio},
+  booktitle={Systems, Man, and Cybernetics, 2001 IEEE International Conference on},
+  volume={2},
+  pages={747--752},
+  year={2001},
+  organization={IEEE}
+}
+
+@inproceedings{randell2000context,
+  title={Context awareness by analysing accelerometer data},
+  author={Randell, Cliff and Muller, Henk},
+  booktitle={Wearable Computers, The Fourth International Symposium on},
+  pages={175--176},
+  year={2000},
+  organization={IEEE}
+}
+
+@misc{acrobat,
+  key = "acrobat",
+  title = {{Adobe Acrobat Reader 7}},
+   note = {\url{http://www.adobe.com/products/acrobat/}}
+}
+
+@article{ethics,
+  title = {{Social Impacts of Computing: Codes of Professional Ethics}},
+  author = {Ronald E. Anderson},
+  doi = "10.1177/089443939201000402",
+  journal = "Social Science Computer Review December",
+  year = 1992,
+  volume = 10,
+  number = 4,
+  pages = "453-469"
+}
+
+@misc{acm_categories,
+  key = "association",
+  title = {{How to Classify Works Using ACM's Computing Classification System}},
+  note = {\url{http://www.acm.org/class/how_to_use.html}},
+},
+
+@inproceedings{Klemmer:2002:WSC:503376.503378,
+ author = {Klemmer, Scott R. and Thomsen, Michael and Phelps-Goodman, Ethan and Lee, Robert and Landay, James A.},
+ title = {Where do web sites come from?: capturing and interacting with design history},
+ booktitle = {Proc. CHI 2002},
+ year = {2002},
+ pages = {1--8},
+ publisher = {ACM Press},
+}
+
+@inproceedings{Mather:2000:MUT,
+  title = {Making up titles for conference papers},
+  author = {Mather, B. D.},
+  booktitle = {Ext. Abstracts CHI 2000},
+  year = 2000,
+  publisher = "ACM Press",
+  pages = "1-2",
+}
+
+@book{Schwartz:1995:GBF,
+  title = {{Guidelines for Bias-Free Writing}},
+  author = {Schwartz, Marilyn},
+  publisher = {Indiana University Press},
+  location = {Bloomington, IN, USA},
+  year = 1995,
+}
+
+@inproceedings{Zellweger:2001:FAO:504216.504224,
+ author = {Zellweger, Polle T. and Bouvin, Niels Olof and Jeh{\o}j, Henning and Mackinlay, Jock D.},
+ title = {Fluid annotations in an open world},
+ booktitle = {Proc. Hypertext 2001},
+ year = {2001},
+ pages = {9--18},
+ publisher = {ACM Press},
+}
