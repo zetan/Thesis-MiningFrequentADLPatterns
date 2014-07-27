@@ -95,44 +95,35 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Complex activity recognition is an active area in sensor mining and ubiquitous computing community. 
-Activities of Daily Living(ADL) falls in this area.
-However, the majority of researches focus on supervised or semi-supervised learning to recognize them, which require extensive manual labeling and limit the classes it can model.
-
- An unsupervised approach on mining ADLs is proposed in this paper.
- It mines on unlabeled acceleration stream and learns classifiers for its discovered ADL classes, and it can keep digging for new classes of activity when new acceleration stream comes.
- The approach can be divided into two phrases:
- A rough segmentation of the motion stream via topic model, and model learning with semi-supervised learning, whose training set is obtained by segmentation results from the first stage.
- Experiments on real life dataset show promising results on both ability to discover ADL patterns and recognizing accuracy of its learned classifiers.
+Physical activity recognition is an active area in sensor mining and ubiquitous computing community. 
+One challenge is to handle large amount of data which does not belongs to pre-defined classes.
+In this paper, we propose an unsupervised method to discover frequent Activity of Daily Living (ADL) patterns from acceleration data streams.
+Once an frequently-occurred ADL pattern is discovered, our approach learns a classifier for it.
+And the approach can keep digging for new classes of activity when new acceleration stream comes.
+Our approach can be divided into two phrases:
+ A rough segmentation (pattern discovery) of the motion stream via topic model, and model learning with semi-supervised learning, whose training set is obtained by segmentation results from the first stage.
+ Experiments on real life datasets show promising results on both ability to discover ADL patterns and recognizing accuracy of its learned classifiers.
 \end{abstract}
 
 \keywords{
-	Complex activity recognition; ADL recognition; ADL mining; Pattern discovery
+	ADL discovery; ADL recognition; Pattern discovery
 }
 
 \section{Introduction}
 
-Complex activity recognition is an active research area in senor mining and wearable computing.
-Unlike ``simple activity" such as ``walking, sitting, running" and some given gestures, a complex activity \cite{rai2012mining} is composed of a series of sub-activities in a non-stable order.
-The recognition of complex activity such as ``having dinner", ``working at desk", ``dressing up" provides context-based applications with a higher level abstraction of the user context.
-Activities of Daily Living (ADL) falls in this category and draws special interests of the researchers.
+Activities of Daily Living (ADL) recognition is an active research area in senor mining and wearable computing.
+Unlike ``simple activity" such as ``walking, sitting, running" and some given gestures, an ADL level activity such as ``having dinner", ``vacuuming" is composed of a series of sub-activities in a non-stable order.
+The recognition of ADLs such as ``having dinner", ``working at desk", ``dressing up" provides context-based applications with a higher level abstraction of the user context.
 With the popularization of smart phones and wearable gadgets such as smart bracelets, the efficient discovery and recognition of ADL is able to provide useful context to applications ranging from healthy care to context-aware smartphone, from education and smart home.
 
-Most approaches for ADLs recognition via acceleration data are based on supervised and semi-supervised machine learning techniques.
-Therefore these approaches rely on a significant amount of labeled training data.
-However, it is often time-consuming and tedious to assign annotations to the motion data collected through weeks by replaying camera videos or written logs.
-More importantly, the supervised method limits the number and variety of learned models and lack the ability to discover new patterns.
-If the training data does not contains a class ``playing tennis", for example, then it can not discover the activity ``playing tennis" from the test data even if the test user is a tennis player and spends most of his time on playing tennis.
+The generally accepted scheme to recognize activities is to use machine learning techniques to map pre-segmented acceleration data to the corresponding pre-defined activity labels. 
+However, the online recognition and personalized activity modeling introduces challenges that do not occur in the generally accepted offline approach.
+One of the challenges is that the user's actual activities may not occur in the pre-defined label list. It requires the system to automatically discover these out-of-vocabulary activity patterns, especially when the out-of-vocabulary data occupies the majority of the observed data.
 
-In this paper, we propose an unsupervised scheme to discover and recognize ADLs from unlabeled acceleration data.
-We take unlabeled acceleration stream as input and learned classifiers (one for one class of ADL) as output. Our method is based on topic model and semi-supervised learning.
+In this paper, we propose an unsupervised approach to discover ADL patterns from unlabeled acceleration data.
+We take unlabeled acceleration stream as input and learned classifiers (one for each discovered ADL pattern) as output. Our method is based on topic model and semi-supervised learning.
 
-Our research has three-folded meanings.
-First, it relieves the tedious effort of manual annotation of training data.
-Secondly, it is a continuous discovery process.
-It can keep taking in new motion sensor stream and exploring new patterns of ADL.
-Thirdly, the classifiers learned could be personalized.
-The approach leverages the user's own motion data, thus the class of learned model and the parameters of learned model is adaptive the user's own daily routine and motion style.
+By discovering frequent ADL patterns unsupervisedly, our approach adapts itself to the user's out-of-vocabulary activity patterns. Also it offers the opportunity to build a personalized model by leveraging the user's own motion data, in a way where the class of learned model and the parameters of learned model is adaptive the user's own daily routine and motion style.
 
 The main contributions of this paper is as follows.
 First, it propose an unsupervised scheme to discover ADLs in acceleration stream and learned classifiers for each discovered pattern.
@@ -424,11 +415,19 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     Section ``Recognize ADLs" focuses on measuring the recognition accuracy of the learned classifiers.
 
     \subsection{Datasets}
-    We performed our experiment on Ubicomp dataset.
-    This dataset recorded the daily life of one person over a period of sixteen days, of which seven days are annotated with ADL level.
-    Two wearable accelerometers were placed at the dominant wrist and in the right pocket (i.e. slightly below the right hip) of a single male subject as he was performing everyday activities \cite{huynh2008discovery}.
+    
+    \subsubsection{Ubicomp Dataset}
+    Ubicomp08 dataset \cite{huynh2008discovery} recorded the daily life of one person over a period of sixteen days, of which seven days are annotated with ADL level.
+    Two wearable accelerometers were placed at the dominant wrist and in the right pocket (i.e. slightly below the right hip) of a single male subject as he was performing everyday activities .
     The accelerometers collects data at 2Hz frequency.
     Each day of the records consists of roughly 12 hours of data.
+    
+    \subsubsection{PAMAP Dataset}
+    PAMAP dataset \cite{reiss2012introducing, reiss2012creating} contains data 12 different activities (including lying, walking, vacuum cleaning, ironing, etc), performed by 9 subjects wearing three inertial sensors and a heart rate monitor.
+    The three inertial units are worn at chest, hand and ankle, recording 3D acceleration data at 100Hz.
+    The data is collected in realistic scenes.
+    Altogether, over 10 hours of data is collected, of which nearly 8 hours are annotated.
+    
 
     \subsection{ADL Discovery}
     \label{subsec.exp.mining-on-same-day}

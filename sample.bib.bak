@@ -1,3 +1,89 @@
+@incollection{anguita2012human,
+  title={Human activity recognition on smartphones using a multiclass hardware-friendly support vector machine},
+  author={Anguita, Davide and Ghio, Alessandro and Oneto, Luca and Parra, Xavier and Reyes-Ortiz, Jorge L},
+  booktitle={Ambient assisted living and home care},
+  pages={216--223},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{wu2012classification,
+  title={Classification accuracies of physical activities using smartphone motion sensors},
+  author={Wu, Wanmin and Dasgupta, Sanjoy and Ramirez, Ernesto E and Peterson, Carlyn and Norman, Gregory J},
+  journal={Journal of medical Internet research},
+  volume={14},
+  number={5},
+  pages={e130},
+  year={2012},
+  publisher={JMIR Publications Inc., Toronto, Canada}
+}
+
+@article{kwapisz2011activity,
+  title={Activity recognition using cell phone accelerometers},
+  author={Kwapisz, Jennifer R and Weiss, Gary M and Moore, Samuel A},
+  journal={ACM SigKDD Explorations Newsletter},
+  volume={12},
+  number={2},
+  pages={74--82},
+  year={2011},
+  publisher={ACM}
+}
+
+@incollection{brezmes2009activity,
+  title={Activity recognition from accelerometer data on a mobile phone},
+  author={Brezmes, Tomas and Gorricho, Juan-Luis and Cotrina, Josep},
+  booktitle={Distributed computing, artificial intelligence, bioinformatics, soft computing, and ambient assisted living},
+  pages={796--799},
+  year={2009},
+  publisher={Springer}
+}
+
+@inproceedings{yang2009toward,
+  title={Toward physical activity diary: motion recognition using simple acceleration features with mobile phones},
+  author={Yang, Jun},
+  booktitle={Proceedings of the 1st international workshop on Interactive multimedia for consumer electronics},
+  pages={1--10},
+  year={2009},
+  organization={ACM}
+}
+
+@article{lockhartbenefits,
+  title={The Benefits of Personalized Smartphone-Based Activity Recognition Models},
+  author={Lockhart, Jeffrey W and Weiss, Gary M},
+  publisher={SIAM}
+}
+
+@article{parkka2010personalization,
+  title={Personalization algorithm for real-time activity recognition using PDA, wireless motion bands, and binary decision tree},
+  author={Parkka, Juha and Cluitmans, Luc and Ermes, Miikka},
+  journal={Information Technology in Biomedicine, IEEE Transactions on},
+  volume={14},
+  number={5},
+  pages={1211--1215},
+  year={2010},
+  publisher={IEEE}
+}
+
+@inproceedings{reiss2013personalized,
+  title={Personalized mobile physical activity recognition},
+  author={Reiss, Attila and Stricker, Didier},
+  booktitle={Proceedings of the 17th annual international symposium on International symposium on wearable computers},
+  pages={25--28},
+  year={2013},
+  organization={ACM}
+}
+
+@article{roggen2013adarc,
+  title={The adARC pattern analysis architecture for adaptive human activity recognition systems},
+  author={Roggen, Daniel and F{\"o}rster, Kilian and Calatroni, Alberto and Tr{\"o}ster, Gerhard},
+  journal={Journal of Ambient Intelligence and Humanized Computing},
+  volume={4},
+  number={2},
+  pages={169--186},
+  year={2013},
+  publisher={Springer}
+}
+
 @inproceedings{rai2012mining,
   title={Mining complex activities in the wild via a single smartphone accelerometer},
   author={Rai, Angshu and Yan, Zhixian and Chakraborty, Dipanjan and Wijaya, Tri Kurniawan and Aberer, Karl},

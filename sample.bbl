@@ -58,6 +58,19 @@ Rai, A., Yan, Z., Chakraborty, D., Wijaya, T.~K., and Aberer, K.
 \newblock In {\em Proceedings of the Sixth International Workshop on Knowledge
   Discovery from Sensor Data}, ACM (2012), 43--51.
 
+\bibitem{reiss2012creating}
+Reiss, A., and Stricker, D.
+\newblock Creating and benchmarking a new dataset for physical activity
+  monitoring.
+\newblock In {\em Proceedings of the 5th International Conference on PErvasive
+  Technologies Related to Assistive Environments}, ACM (2012), 40.
+
+\bibitem{reiss2012introducing}
+Reiss, A., and Stricker, D.
+\newblock Introducing a new benchmarked dataset for activity monitoring.
+\newblock In {\em Wearable Computers (ISWC), 2012 16th International Symposium
+  on}, IEEE (2012), 108--109.
+
 \bibitem{stikic2009activity}
 Stikic, M., and Schiele, B.
 \newblock Activity recognition from sparsely labeled data using multi-instance

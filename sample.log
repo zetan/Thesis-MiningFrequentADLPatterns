@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.2)  27 JUL 2014 11:40
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.2)  27 JUL 2014 18:22
 entering extended mode
 **D:/machine*learning/thesis/mining_frequent_adl_patterns/sample.tex
 ("D:/machine learning/thesis/mining_frequent_adl_patterns/sample.tex"
@@ -500,78 +500,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--96
 
  []
 
-[1{D:/Appliacation/Utility/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{
-UGBK.sfd}}
+
+Underfull \vbox (badness 2662) has occurred while \output is active []
+
+ [1{D:/Appliacation/Utility/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}
+{UGBK.sfd}}
 
 
 Non-PDF special ignored!
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 177.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
 
-<MotionDiscoveryFlowChart.jpg, id=113, 585.68813pt x 546.54187pt>
+<MotionDiscoveryFlowChart.jpg, id=122, 585.68813pt x 546.54187pt>
 File: MotionDiscoveryFlowChart.jpg Graphic file (type jpg)
 
 <use MotionDiscoveryFlowChart.jpg>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 198.
 
-<tm-having-dinner.jpg, id=116, 230.8625pt x 217.31187pt>
+<tm-having-dinner.jpg, id=125, 230.8625pt x 217.31187pt>
 File: tm-having-dinner.jpg Graphic file (type jpg)
 
 <use tm-having-dinner.jpg>
-<tm-queue-in-line.jpg, id=117, 240.9pt x 219.82124pt>
+<tm-queue-in-line.jpg, id=126, 240.9pt x 219.82124pt>
 File: tm-queue-in-line.jpg Graphic file (type jpg)
 
-<use tm-queue-in-line.jpg> <tm-noise.jpg, id=118, 240.39813pt x 222.8325pt>
+<use tm-queue-in-line.jpg> <tm-noise.jpg, id=127, 240.39813pt x 222.8325pt>
 File: tm-noise.jpg Graphic file (type jpg)
 
-<use tm-noise.jpg> [2 <D:/machine learning/thesis/mining_frequent_adl_patterns/
-MotionDiscoveryFlowChart.jpg>]
-Underfull \hbox (badness 1895) in paragraph at lines 295--300
+<use tm-noise.jpg>
+Underfull \vbox (badness 1552) has occurred while \output is active []
+
+ [2 <D:/machine learning/thesis/mining_frequent_adl_patterns/MotionDiscoveryFlo
+wChart.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 286--291
 []\OT1/ptm/m/n/10 Figure [][]3[][] shows the re-sult of L-DA mod-el on motion-
  []
 
 [3 <D:/machine learning/thesis/mining_frequent_adl_patterns/tm-having-dinner.jp
 g> <D:/machine learning/thesis/mining_frequent_adl_patterns/tm-queue-in-line.jp
 g> <D:/machine learning/thesis/mining_frequent_adl_patterns/tm-noise.jpg>]
-<seg1_tagged.jpg, id=155, 630.85687pt x 220.825pt>
+<seg1_tagged.jpg, id=162, 630.85687pt x 220.825pt>
 File: seg1_tagged.jpg Graphic file (type jpg)
  <use seg1_tagged.jpg>
-<seg2_tagged.jpg, id=156, 622.325pt x 208.78pt>
+<seg2_tagged.jpg, id=163, 622.325pt x 208.78pt>
 File: seg2_tagged.jpg Graphic file (type jpg)
  <use seg2_tagged.jpg>
-Overfull \hbox (6.73315pt too wide) in paragraph at lines 305--310
+Overfull \hbox (6.73315pt too wide) in paragraph at lines 296--301
  [][] 
  []
 
 
-Overfull \hbox (6.7336pt too wide) in paragraph at lines 305--310
+Overfull \hbox (6.7336pt too wide) in paragraph at lines 296--301
  [][] 
  []
 
-<segmentation_day1.jpg, id=159, 562.60187pt x 93.34875pt>
+<segmentation_day1.jpg, id=166, 562.60187pt x 93.34875pt>
 File: segmentation_day1.jpg Graphic file (type jpg)
 
 <use segmentation_day1.jpg>
-Overfull \hbox (1.73468pt too wide) in paragraph at lines 341--342
+Overfull \hbox (1.73468pt too wide) in paragraph at lines 332--333
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
 []\OT1/ptm/m/n/10 Difference of top-ic dis-tri-bu-tion be-tween
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
 \OT1/ptm/m/n/10 seg-men-t $\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 d[]; d[]; [] ; d[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
 \OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]; d[]; [] ; d[]\OT1/cm
 r/m/n/10 )$ \OT1/ptm/m/n/10 mea-sures the d-if-fer-ence
  []
@@ -579,66 +588,70 @@ r/m/n/10 )$ \OT1/ptm/m/n/10 mea-sures the d-if-fer-ence
 [4 <D:/machine learning/thesis/mining_frequent_adl_patterns/seg1_tagged.jpg> <D
 :/machine learning/thesis/mining_frequent_adl_patterns/seg2_tagged.jpg> <D:/mac
 hine learning/thesis/mining_frequent_adl_patterns/segmentation_day1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
+Underfull \hbox (badness 10000) in paragraph at lines 373--375
 []\OT1/ptm/b/n/10 long sim-i-lar seg-men-t $\OML/cmm/m/it/10 S$ \OT1/ptm/m/n/10
  ($\OML/cmm/m/it/10 Diff\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S; S[]\OT1/cmr/m/n/10
  ) \OML/cmm/m/it/10 <
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 382--384
+Underfull \hbox (badness 2050) in paragraph at lines 373--375
 \OML/cmm/m/it/10 threshold$\OT1/ptm/m/n/10 ): The sam-ple $\OML/cmm/m/it/10 S$ 
 \OT1/ptm/m/n/10 is hard to tel-l whether
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--387
+Underfull \hbox (badness 10000) in paragraph at lines 376--378
 []\OT1/ptm/b/n/10 long d-if-fer-en-t seg-men-t $\OML/cmm/m/it/10 S$ \OT1/ptm/m/
 n/10 ($\OML/cmm/m/it/10 Diff\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S; S[]\OT1/cmr/m/
 n/10 ) \OML/cmm/m/it/10 >
  []
 
 
-<day1-desk-lyingcomputer-discussing-dot-legend.jpg, id=176, 600.2425pt x 148.55
+<day1-desk-lyingcomputer-discussing-dot-legend.jpg, id=183, 600.2425pt x 148.55
 5pt>
 File: day1-desk-lyingcomputer-discussing-dot-legend.jpg Graphic file (type jpg)
 
  <use day1-desk-lyingcomputer-discussing-dot-legend.jpg>
-Overfull \hbox (1.73396pt too wide) in paragraph at lines 412--413
+Overfull \hbox (1.73396pt too wide) in paragraph at lines 403--404
  [][] 
  []
 
 [5 <D:/machine learning/thesis/mining_frequent_adl_patterns/day1-desk-lyingcomp
 uter-discussing-dot-legend.jpg>]
-Overfull \hbox (20.03558pt too wide) in paragraph at lines 486--527
+Overfull \hbox (20.03558pt too wide) in paragraph at lines 485--526
  [][] 
  []
 
-[6] ("D:\machine learning\thesis\mining_frequent_adl_patterns\sample.bbl")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
-
-Overfull \vbox (1.37741pt too high) has occurred while \output is active []
+[6] ("D:\machine learning\thesis\mining_frequent_adl_patterns\sample.bbl"
+Overfull \vbox (10.09492pt too high) has occurred while \output is active []
 
 
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
+[7])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 618.
+
+Overfull \vbox (1.09497pt too high) has occurred while \output is active []
+
+
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 618.
  ("D:\machine learning\thesis\mining_frequent_adl_patterns\sample.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 619.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 618.
 Package rerunfilecheck Info: File `sample.out' has not changed.
-(rerunfilecheck)             Checksum: 84765A25A0D82A6A55C5C5D8B89B77B2;1243.
+(rerunfilecheck)             Checksum: D1F6870BC9CFD2A861D5FC7F0633FFF2;1371.
  ) 
 Here is how much of TeX's memory you used:
- 6288 strings out of 495362
- 92332 string characters out of 3182848
- 193011 words of memory out of 3000000
- 9243 multiletter control sequences out of 15000+200000
- 26678 words of font info for 54 fonts, out of 3000000 for 9000
+ 6298 strings out of 495362
+ 92481 string characters out of 3182848
+ 194094 words of memory out of 3000000
+ 9247 multiletter control sequences out of 15000+200000
+ 27895 words of font info for 55 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,15n,30p,371b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section*.21} has been referenced but does not exi
+ 39i,15n,30p,440b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section*.23} has been referenced but does not exi
 st, replaced by a fixed one
 
-pdfTeX warning (dest): name{section*.20} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.22} has been referenced but does not exist
 , replaced by a fixed one
 
 pdfTeX warning (dest): name{section*.15} has been referenced but does not exist
@@ -670,12 +683,13 @@ n/Utility/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Appliacation/
 Utility/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Appliacation/
 Utility/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Appliacation/U
 tility/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Appliacation/Utility
-/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/Appliacation/Utility/CTEX/MiK
-TeX/fonts/type1/urw/times/utmr8a.pfb><D:/Appliacation/Utility/CTEX/MiKTeX/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on sample.pdf (7 pages, 969124 bytes).
+/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><D:/Appliacation/Utility/CTEX
+/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/Appliacation/Utility/CTEX/MiKTeX/f
+onts/type1/urw/times/utmr8a.pfb><D:/Appliacation/Utility/CTEX/MiKTeX/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on sample.pdf (8 pages, 977099 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
