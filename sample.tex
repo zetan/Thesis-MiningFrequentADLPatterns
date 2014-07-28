@@ -95,7 +95,7 @@ breaklinks=true,
 \maketitle
 
 \begin{abstract}
-Physical activity recognition is an active area in sensor mining and ubiquitous computing community. 
+Physical activity recognition is an active area in sensor mining and ubiquitous computing community.
 One challenge is to handle large amount of data which does not belongs to pre-defined classes.
 In this paper, we propose an unsupervised method to discover frequent Activity of Daily Living (ADL) patterns from acceleration data streams.
 Once an frequently-occurred ADL pattern is discovered, our approach learns a classifier for it.
@@ -116,7 +116,7 @@ Unlike ``simple activity" such as ``walking, sitting, running" and some given ge
 The recognition of ADLs such as ``having dinner", ``working at desk", ``dressing up" provides context-based applications with a higher level abstraction of the user context.
 With the popularization of smart phones and wearable gadgets such as smart bracelets, the efficient discovery and recognition of ADL is able to provide useful context to applications ranging from healthy care to context-aware smartphone, from education and smart home.
 
-The generally accepted scheme to recognize activities is to use machine learning techniques to map pre-segmented acceleration data to the corresponding pre-defined activity labels. 
+The generally accepted scheme to recognize activities is to use machine learning techniques to map pre-segmented acceleration data to the corresponding pre-defined activity labels.
 However, the online recognition and personalized activity modeling introduces challenges that do not occur in the generally accepted offline approach.
 One of the challenges is that the user's actual activities may not occur in the pre-defined label list. It requires the system to automatically discover these out-of-vocabulary activity patterns, especially when the out-of-vocabulary data occupies the majority of the observed data.
 
@@ -160,8 +160,9 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
 \label{sec.overview}
 
     \subsection{Design Concerns}
-    The goal of our system is to mine ADL activities from hours of on-body sensor stream unsupervisedly.
+    The goal of our system is to mine ADL activitie patterns from hours of on-body sensor stream unsupervisedly.
     The system discovers frequently-occurred ADL pattern from acceleration stream and learn a classier for each discovered pattern.
+    User needs to manually put labels on these patterns.
 
     We'd like our system to discover human activities in such a manner:
     \begin{itemize}
@@ -171,27 +172,34 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
         Our system should keep mining when new sensor data comes.
         It should recognize the known activity classes with its known classifiers and discover new activity patterns from the new data.
 
-        \item \textbf{Scalable to various activity class}
+        \item \textbf{Scalable to activity pattern numbers}
         The number of activity class won't be manually configured in advance.
         The system should decide itself how many activities to model.
 
-        \item \textbf{Personalization}
-        The label of classifiers could be personalized to the user's daily routine and the parameters of each classifier could be personalized to his own motion style.
     \end{itemize}
 
 \subsection{Framework of Our Approach}
 
     We design our system as a unsupervised learning system to meet these requirements.
-    Since our method is unsupervised, we may only use unlabeled data, thus the learning process could keep on discovering once after new unlabeled data collected.
-    Also, we may able to leverage the user's own unlabeled data.
-    Therefore the classifiers learned could be personalized.
+    
+    We design our system as an iterative discovering process to meet these requirements.
+    By introducing topic model, we perform pattern discovering by analyzing the distribution of topics over small motion windows.
+    An relatively similar and steady distribution over a period of time indicates a potential activity pattern.
+    In this way, the number of patterns won't be the number of topics.
+    That is the main difference between our method and the K-clustering method and previous topic model based method.
+    In previous methods, the number of patterns are pre-defined, either cluster number $K_c$ or topic model number $K_t$.
+    In our method, the number of patterns are decided at runtime.
 
     Figure \ref{fig: flowchart} illustrates the overall framework of our design.
     Our method could be divided into two phrases.
     The first phrase applies an LDA algorithm to do a rough segmentation to the raw acceleration stream.
-    We apply the LDA estimation to documents generated over a slide window of 30 seconds and shifted by 30 seconds.
+    We apply the LDA estimation to documents generated over a slide window of 10-30 seconds and shifted by 10-30 seconds.
     Then the raw segmentation is performed by analyzing the distribution of topics of the neighboring windows.
+    Each segment is regarded as a potential activity pattern.
     The second phrase generates training examples for a certain activity from the segmentation result and learns the classifier for this activity with semi-supervised learning techniques.
+    Phrase two has two functions.
+    One is to try to find all activity instance who belong to the same pattern with activity instance in the target segment.
+    Another one is that, after user put a label on the learned classifier, then this classifier could be used directly to recognize activities on new data.
 
     \begin{figure}
      \includegraphics[height=3in]{MotionDiscoveryFlowChart.jpg}
@@ -415,19 +423,19 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     Section ``Recognize ADLs" focuses on measuring the recognition accuracy of the learned classifiers.
 
     \subsection{Datasets}
-    
+
     \subsubsection{Ubicomp Dataset}
     Ubicomp08 dataset \cite{huynh2008discovery} recorded the daily life of one person over a period of sixteen days, of which seven days are annotated with ADL level.
     Two wearable accelerometers were placed at the dominant wrist and in the right pocket (i.e. slightly below the right hip) of a single male subject as he was performing everyday activities .
     The accelerometers collects data at 2Hz frequency.
     Each day of the records consists of roughly 12 hours of data.
-    
+
     \subsubsection{PAMAP Dataset}
     PAMAP dataset \cite{reiss2012introducing, reiss2012creating} contains data 12 different activities (including lying, walking, vacuum cleaning, ironing, etc), performed by 9 subjects wearing three inertial sensors and a heart rate monitor.
     The three inertial units are worn at chest, hand and ankle, recording 3D acceleration data at 100Hz.
     The data is collected in realistic scenes.
     Altogether, over 10 hours of data is collected, of which nearly 8 hours are annotated.
-    
+
 
     \subsection{ADL Discovery}
     \label{subsec.exp.mining-on-same-day}
