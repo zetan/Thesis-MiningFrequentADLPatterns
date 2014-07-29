@@ -172,27 +172,34 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
         Our system should keep mining when new sensor data comes.
         It should recognize the known activity classes with its known classifiers and discover new activity patterns from the new data.
 
-        \item \textbf{Scalable to various activity class}
+        \item \textbf{Scalable to activity pattern numbers}
         The number of activity class won't be manually configured in advance.
         The system should decide itself how many activities to model.
 
-        \item \textbf{Personalization}
-        The label of classifiers could be personalized to the user's daily routine and the parameters of each classifier could be personalized to his own motion style.
     \end{itemize}
 
 \subsection{Framework of Our Approach}
 
     We design our system as a unsupervised learning system to meet these requirements.
-    Since our method is unsupervised, we may only use unlabeled data, thus the learning process could keep on discovering once after new unlabeled data collected.
-    Also, we may able to leverage the user's own unlabeled data.
-    Therefore the classifiers learned could be personalized.
+
+    We design our system as an iterative discovering process to meet these requirements.
+    By introducing topic model, we perform pattern discovering by analyzing the distribution of topics over small motion windows.
+    An relatively similar and steady distribution over a period of time indicates a potential activity pattern.
+    In this way, the number of patterns won't be the number of topics.
+    That is the main difference between our method and the K-clustering method and previous topic model based method.
+    In previous methods, the number of patterns are pre-defined, either cluster number $K_c$ or topic model number $K_t$.
+    In our method, the number of patterns are decided at runtime.
 
     Figure \ref{fig: flowchart} illustrates the overall framework of our design.
     Our method could be divided into two phrases.
     The first phrase applies an LDA algorithm to do a rough segmentation to the raw acceleration stream.
-    We apply the LDA estimation to documents generated over a slide window of 30 seconds and shifted by 30 seconds.
+    We apply the LDA estimation to documents generated over a slide window of 10-30 seconds and shifted by 10-30 seconds.
     Then the raw segmentation is performed by analyzing the distribution of topics of the neighboring windows.
+    Each segment is regarded as a potential activity pattern.
     The second phrase generates training examples for a certain activity from the segmentation result and learns the classifier for this activity with semi-supervised learning techniques.
+    Phrase two has two functions.
+    One is to try to find all activity instance who belong to the same pattern with activity instance in the target segment.
+    The other one is that, after user put a label on the learned classifier, then this classifier could be used directly to recognize activities on new data.
 
     \begin{figure}
      \includegraphics[height=3in]{MotionDiscoveryFlowChart.jpg}
@@ -410,10 +417,12 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
 \section{Experiments}
 \label{sec.experiments}
 
-    While Figure \ref{fig: day1-result} suggests that our approach are able to discover ADL patterns from unlabeled acceleration streams, it is not obvious how to quantify the results.
-    We propose three metrics in this section to measure its ability on discovery ADL patterns and accuracy of its classifiers.
-    Section ``ADL Discovery" and ``New Patterns Discovery on New Data" focus on examine the ability on discovering patterns from acceleration streams.
-    Section ``Recognize ADLs" focuses on measuring the recognition accuracy of the learned classifiers.
+ %   While Figure \ref{fig: day1-result} suggests that our approach are able to discover ADL patterns from unlabeled acceleration streams, it is not obvious how to quantify the results.
+ %   We propose three metrics in this section to measure its ability on discovery ADL patterns and accuracy of its classifiers.
+    We use two open dataset Ubicomp08 and PAMAP in our experiment.
+    In section ``Datasets", we will give a brief introduction two these two datasets and give our parameters in the experiment.
+    In section ``Discussion on LDA-based Segmentation", a detailed discussion is given on the segmentation results.
+    We also designed three experiments to measure our approach's ability on discovering ADL patterns (Section ``ADL Discovery" and ``New Patterns Discovery on New Data") and accuracy of its learned classifiers (Section ``Recognize ADLs").
 
     \subsection{Datasets}
 
@@ -429,6 +438,7 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     The data is collected in realistic scenes.
     Altogether, over 10 hours of data is collected, of which nearly 8 hours are annotated.
 
+    \subsection{Discussion on LDA-based Segmentation}
 
     \subsection{ADL Discovery}
     \label{subsec.exp.mining-on-same-day}
