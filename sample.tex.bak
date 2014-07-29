@@ -330,9 +330,8 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     Figure \ref{fig: day1-segmentation-result} illustrate the segmentation results of Day-1 data.
     Ideally, documents with the same activity class over a relatively long period of time are estimated into one segmentation (e.g. ``discussing at whiteboard", ``lying using computer").
     However, some long activities are cut into several segments (e.g. ``sitting desk working").
-    This may due to some reasons.
-    (1) This activity are somehow interrupted by some short activities (e.g.``stand up and go for a drink"). (2) The activity is so long that makes the document set unbalanced and force the LDA to model it on a more fine-level granular.
-    (3) The user may changes his posture style slightly during the long activity.
+    This may due to the interruptions by some short activities or the severe unbalance of the document set.
+    More details will be discussed in Section ``Experiments. Discussion on LDA-based Segmentation".
     This problem can be eased by semi-supervised learning in the next phrase.
 
     \begin{figure}
@@ -420,7 +419,7 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
  %   While Figure \ref{fig: day1-result} suggests that our approach are able to discover ADL patterns from unlabeled acceleration streams, it is not obvious how to quantify the results.
  %   We propose three metrics in this section to measure its ability on discovery ADL patterns and accuracy of its classifiers.
     We use two open dataset Ubicomp08 and PAMAP in our experiment.
-    In section ``Datasets", we will give a brief introduction two these two datasets and give our parameters in the experiment.
+    In section ``Datasets", we will give a brief introduction about these two datasets and give our parameters in the experiment.
     In section ``Discussion on LDA-based Segmentation", a detailed discussion is given on the segmentation results.
     We also designed three experiments to measure our approach's ability on discovering ADL patterns (Section ``ADL Discovery" and ``New Patterns Discovery on New Data") and accuracy of its learned classifiers (Section ``Recognize ADLs").
 
@@ -439,37 +438,72 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     Altogether, over 10 hours of data is collected, of which nearly 8 hours are annotated.
 
     \subsection{Discussion on LDA-based Segmentation}
+    By comparing our segmentation result with the ground truth annotation, we divide our segmentation result into three circumstances. Namely,
+    \begin{itemize}
+        \item \textbf{One segment to one activity}
+         This is the ideal case.
+         One ADL over a period of time is segmented to one segment.
+         This often happens when the ADL lasts an appropriate time, and its motion differs from its neighbor ADLs.
+         This case takes up to about 30\% in Ubicomp08 dataset and 60\% in PAMAP dataset.
+        \item \textbf{Multiple segment to one activity}
+        This case often happens to heavily unbalanced data.
+        In Ubicomp08 dataset, ``sitting desk working" takes up over 70\% of the time. Though it occurs at several periods of the day, one period is relatively long. 
+        Our method often sliced one ``sitting desk working" period into several segments.
+        This may due to three reasons.
+        (1) The activity is interrupted by some short motions such as 'stand up and go for a drink'.
+        (2) The activity is so long that makes the document set unbalanced and force the LDA to model it on a more fine granular.
+        (3) The subject may change his posture or motion style over such long time.
+        \item \textbf{One segment to multiple activity}
+        This case happens when two similar ADL neighboring to each other.
+        In PAMAP dataset, subject No.105 performs ``ironing" right after ``standing".
+        The topic distribution over these two ADL is rather similar, and our system divided them into one segment.
+        Another scenario is that one segment contains several short ADLs in an severely unbalanced dataset.
+        This often happens at the first iteration on segmenting Ubicomp08 dataset.
+        As discussed above, activity ``sitting desk working" takes up to 70\% of the whole motion-document set, and forces the LDA to model it more fine and model other activities more coarse.
+        This problem is eased by our iterative approach.
+        After discovering pattern ``sitting desk working" in the first iteration, we filter this pattern out and start the segmentation process again on the remaining motion-documents.
+        On the second iteration, the motion-documents are balanced and our approach are able to segment these short activities successfully.
+        
+        
+    \end{itemize}
+
 
     \subsection{ADL Discovery}
     \label{subsec.exp.mining-on-same-day}
 
-    Since our approach discovers ADLs patterns in an unsupervised way, one of the common scenes to use our approach is make it to mine and label hours of sensor data without any prior knowledge.
-    Here, we applied our method on one-day-long sensor data, and evaluated its performance on its discovering coverage and accuracy.
+    Since our approach discovers ADLs patterns in an unsupervised way, one of the common scenes to use our approach is make it to mine hours of sensor data without any prior knowledge. Then the user could put labels on the discovered patterns.
+    In the experiment, we applied our our mining algorithm on each day data of Ubicomp dataset and 5 subjects in PAMAP dataset.
+    And we evaluated the performance of our method by measuring its discovering coverage and accuracy.
     Namely, we focus on
         \begin{itemize}
         \item \textbf{Activity count} How many ADL patterns are discovered?
-        \item \textbf{Discovery coverage} How many samples in the dataset can be covered by the recognized pattern classes?
-        \item \textbf{Recognition accuracy} How many samples in the dataset are correctedly labeled?
+        \item \textbf{Discovery coverage} How many samples in the dataset can be covered by the discovered patterns?
+        \item \textbf{Recognition accuracy} How many samples in the dataset are correctively clustered?
         \end{itemize}
-    One thing to mention is that in this section's experiment, the dataset that we test on is the same dataset that we applied our mining algorithm on.
 
-     We applied our our mining algorithm on each day of Ubicomp dataset.
-     Ten activity patterns (Table \ref{tab: ADL patterns discovered}) are discovered in seven days, includes ``sitting-desk-working", ``discussing-at-whiteboard", ``driving-bike", ``fanning-in-barbecue", etc.
-     Table \ref{tab:result-seven-days} shows the mining results of seven days.
-     In this table, The ADL pattern, coverage, recognizing sensitivity and accuracy are listed.
-     The average coverage of discovered patterns reaches 86\%.
-     The result also shows the good adaptivity of our scheme to new activity patterns.
+    % expermental approach - emphasize that we put the label according to the annotation%
+  
+     After the system ran on the acceleration data, we compared the discovered patterns with the ground truth annotation, and attached labels for these patterns.
+     For each discovered pattern, we only attached one most related label (sometimes ``unknown" for unannotated data).
+     The coverage, sensitivity and accuracy metrics are measured based on this label.
+     
+     10 distinct activity patterns (Table \ref{tab: ADL patterns discovered ubicomp}) are discovered in seven days in Ubicomp08 dataset, including ``sitting-desk-working", ``discussing-at-whiteboard", ``driving-bike", ``fanning-in-barbecue", etc.    
+     
+     8 distinct activity patterns (Table \ref{tab: ADL patterns discovered pamap}) and three unknown patterns are discovered in PAMAP dataset, including ``watching TV", ``vacuum cleaning", etc.
+     
+     Table \ref{tab:result-seven-days} shows the detailed mining results on Ubicomp08 dataset.
+     Overall the discovered patterns covers 86\% of the raw data, and the overall recognizing accuracy reaches 75\% sensitivity and 79\% accuracy.
+     The result shows the good adaptivity of our scheme to new activity patterns.
      Day-4 seems a outing barbecue day in the dataset. Some barbecue related activities appear only on that day.
-     The approach adapts to this phenomenon by successfully discovering pattern "kneeling-making-fire" and "fanning at barbecue".
+     The approach adapts to this phenomenon by successfully discovering pattern "kneeling making fire" and "fanning at barbecue".
 
-     The overall labeling accuracy reaches 75\% sensitivity and 79\% accuracy.
      The accuracy is relatively better for activities that performed in a continuous period of time, e.g. ``watching-movie" (Day-5), ``discussing-at-whiteboard"(Day-1, Day-4).
-     Activity ``sitting-desk-working" obtains a relatively lower labeling accuracy.
-     One reason for that may be that, the person performs this activity during most of the day, but his working style may differ from morning to afternoon.
+     Activity ``sitting-desk-working" obtains a relatively lower recognizing sensitivity and accuracy.
+     One potential reason may be that the person performs this activity during most of the day, but his working style may differ from morning to afternoon.
      Some classifiers detects his morning desk working sensitively but ignores his afternoon desk working.
      This phenomenon occurs on Day-6. Three pattern are discovered, namely corresponding to ``sitting-desk-working" at in the morning, in the afternoon and in the evening.
      Another reason is that although desk working occupies most of the time, it is interrupted by many other activities.
-     Therefore the segment for desk working is not very long and we don't have sufficient positive examples for training.
+     Therefore the segment for desk working is not very long and we don't have sufficient positive examples for training the classifier.
 
     % Table generated by Excel2LaTeX from sheet 'Sheet6'
 \begin{table}[htbp]
@@ -484,8 +518,23 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     \multicolumn{1}{l}{Fanning at barbecue} & \multicolumn{1}{l}{Watching movie} \\
     \bottomrule
     \end{tabular}%
-    \caption{ADL patterns discovered in Ubicomp dataset}
-  \label{tab: ADL patterns discovered}%
+    \caption{ADL patterns discovered in Ubicomp08 dataset}
+  \label{tab: ADL patterns discovered ubicomp}%
+\end{table}%
+
+\begin{table}[htbp]
+    \begin{tabular}{rr}
+    \toprule
+    \multicolumn{2}{c}{\textbf{Discovered ADL Patterns}} \\
+    \midrule
+    \multicolumn{1}{l}{Nordic walking} & \multicolumn{1}{l}{Walking} \\
+    \multicolumn{1}{l}{Computer Work} & \multicolumn{1}{l}{Watching TV} \\   
+    \multicolumn{1}{l}{Vacuum cleaning} & \multicolumn{1}{l}{Ironing} \\
+    \multicolumn{1}{l}{Sitting} & \multicolumn{1}{l}{Standing} \\
+    \bottomrule
+    \end{tabular}%
+    \caption{ADL patterns discovered in PAMAP dataset}
+  \label{tab: ADL patterns discovered pamap}%
 \end{table}%
 
 % Table generated by Excel2LaTeX from sheet 'Sheet2'
@@ -546,15 +595,17 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     When new sensor data comes, the learned classifiers will first recognize samples in the new dataset and attach labels for them, and then we will keep on mining the remaining data for new activity classes.
     The remaining data makes up the new dataset, and go through stages of segmentation and learning.
     Here, we test our algorithm of the ability of discovering new activity classes with new data, with some old learned classifiers.
-    We take the classifiers learned in day-1 as known models, and day-2 and day-4 data as new data.
-    After recognizing known three activities, we also found new patterns corresponding to ``having a meal" ``driving bike" in day-2 and ``kneeling making fire" ``fanning barbecue" in day-4.
+    We experimented on the Ubicomp08 dataset. Classifiers learned in day-1 are treated as known models. Day-2 and Day-4 data are treated as new data.
+    After recognizing three known activities, we also discovered new patterns corresponding to ``having a meal" ``driving bike" in day-2 and ``kneeling making fire" ``fanning barbecue" in day-4.
 
     \subsection{Recognize ADLs}
     \label{subsec.exp.recognize-performance}
-
-    We also explored the recognizing performance of our learned classifiers.
-    We learned the models based on one day data and test them on other six days.
-    Table 3 shows the recognizing accuracy of some frequently occurred activities.
+    Since a classifier is learnt for each discovered pattern, this classifier could be used to classify new data.
+    
+    Here we did an experiment to explore the classifying performance of our learnt models.
+    We also experimented this on Ubicomp08 dataset. For seven days, we discovered patterns on each day data and manually attach the labels to the classifier by comparing the classification results to the ground truth annotation. As usually, only one label is attached to one classifier. Then we tested these classifiers on the other six days of data.
+    
+    Table \ref{tab:model-accuracy} shows the recognizing accuracy of some frequently occurred activities.
     The overall recognizing performance reaches 69\% sensitivity and 78\% accuracy.
 
     % Table generated by Excel2LaTeX from sheet 'Sheet4'
@@ -572,8 +623,9 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     \multicolumn{1}{l}{\textbf{Average}} & \textbf{0.69}  & \textbf{0.78}  \\
     \bottomrule
     \end{tabular}%
-  \label{tab:model-accuracy}%
+ 
   \caption{Recognizing performance of learned classifiers}
+   \label{tab:model-accuracy}%
 \end{table}%
 
 \section{Conclusion and Future Work}
