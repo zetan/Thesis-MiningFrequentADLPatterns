@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{aztiria2012discovering}
+Aztiria, A., Augusto, J.~C., Basagoiti, R., Izaguirre, A., and Cook, D.~J.
+\newblock Discovering frequent user--environment interactions in intelligent
+  environments.
+\newblock {\em Personal and Ubiquitous Computing 16}, 1 (2012), 91--103.
+
 \bibitem{randell2000context}
 Blei, D.~M.
 \newblock Probabilistic topic models.
@@ -15,6 +21,13 @@ Chikhaoui, B., Wang, S., and Pigot, H.
 Cook, D.~J., Krishnan, N.~C., and Rashidi, P.
 \newblock Activity discovery and activity recognition: A new partnership.
 \newblock {\em Cybernetics, IEEE Transactions on 43}, 3 (2013), 820--828.
+
+\bibitem{farrahi2009learning}
+Farrahi, K., and Gatica-Perez, D.
+\newblock Learning and predicting multimodal daily life patterns from cell
+  phones.
+\newblock In {\em Proceedings of the 2009 international conference on
+  Multimodal interfaces}, ACM (2009), 277--280.
 
 \bibitem{huynh2008discovery}
 Huynh, T., Fritz, M., and Schiele, B.
@@ -58,6 +71,12 @@ Rai, A., Yan, Z., Chakraborty, D., Wijaya, T.~K., and Aberer, K.
 \newblock In {\em Proceedings of the Sixth International Workshop on Knowledge
   Discovery from Sensor Data}, ACM (2012), 43--51.
 
+\bibitem{rashidi2011discovering}
+Rashidi, P., Cook, D.~J., Holder, L.~B., and Schmitter-Edgecombe, M.
+\newblock Discovering activities to recognize and track in a smart environment.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on 23}, 4
+  (2011), 527--539.
+
 \bibitem{reiss2012creating}
 Reiss, A., and Stricker, D.
 \newblock Creating and benchmarking a new dataset for physical activity
@@ -70,6 +89,12 @@ Reiss, A., and Stricker, D.
 \newblock Introducing a new benchmarked dataset for activity monitoring.
 \newblock In {\em Wearable Computers (ISWC), 2012 16th International Symposium
   on}, IEEE (2012), 108--109.
+
+\bibitem{seiter2014discovery}
+Seiter, J., Amft, O., Rossi, M., and Tr{\"o}ster, G.
+\newblock Discovery of activity composites using topic models: An analysis of
+  unsupervised methods.
+\newblock {\em Pervasive and Mobile Computing\/} (2014).
 
 \bibitem{stikic2009activity}
 Stikic, M., and Schiele, B.

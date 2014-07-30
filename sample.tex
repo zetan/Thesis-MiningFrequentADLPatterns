@@ -138,22 +138,28 @@ Finally, in Section ``Conclusion and Future Work" we summarize our results and g
 \section{Related Work}
 \label{sec.related-work}
 
-Earlier human activity recognition focus on gestures and simple activities such as walking, running, going upstairs \cite{kwapisz2011activity, liang1998real, mantyjarvi2001recognizing}.
-In 2012,Rai et al \cite{rai2012mining} recognized complex activities from acceleration data in smartphone. Their approach recognizes complex activities in a two stage scheme on data collected from smartphone over 8 weeks, and reached impressive results.
+The generally accept scheme in human activity recognition is to use some supervised machine learning techniques.
+The interested activities vary from gestures and and simple activities such as walking, running in earlier researches \cite{kwapisz2011activity, liang1998real, mantyjarvi2001recognizing} to more complex daily living activities\cite{rai2012mining}.
 
 A couple of researches ease the labeling efforts by leverage techniques of semi-supervised learning and multi-instance learning.
 Maja et al \cite{stikic2008exploring} explored the performance of co-training and active learning in ADL recognition, and found that the train data can be reduced to a surprisingly small amount.
 Stikic et al \cite{stikic2009activity} applied multi-instance learning to provides user with more abstract annotation ways.
 
-Another line of research avoids the labeling efforts by unsupervised discovery.
+Another line of research aims at discovering activity patterns from unlabeled data.
 ADR-SPLDA \cite{chikhaoui2012adr} explored the activity discovery in the smart home with extensive sensors in a hierarchical approach. Cook et al\cite{cook2013activity} also discovered activity pattern in an smart environment by discovering frequently-occurred event sequences.
-Huynh et al \cite{huynh2006unsupervised} and Minnen et al \cite{minnen2006discovering} detected certain simple activities from on-body acceleration data in an unsupervised way. Topic model is a popular method in unsupervised activity discovery.
-Typical ways to use topic model in activity discovery is a hierarchical approach.
+Other researches \cite{rashidi2011discovering, aztiria2012discovering} also infers ADLs from sequential information.
+Huynh et al \cite{huynh2006unsupervised} and Minnen et al \cite{minnen2006discovering} detected certain simple activities from on-body acceleration data in an unsupervised way.
+
+Topic model is a popular method in unsupervised activity discovery.
+Farrahi et al. \cite{farrahi2009learning} inferred daily routines from location transition and proximity using topic models.
+Another typical way to use topic model in activity discovery is a hierarchical approach.
 First, researchers learn low-level short activity or posture in an supervised way and convert the raw sensor stream into low-level activity sequences.
 Then topic model is applied on these activity sequences to discovered the high-level pattern.
 Huynh \cite{huynh2008discovery} applied topic model on low-level recognized activities to discovery daily routine pattern.
 ADR-SPLDA \cite{chikhaoui2012adr} also applied topic model on low-level recognized sequences.
-Pathak et al \cite{wang2009human} uses the similar approach in video stream mining.
+A quantified investigation on topic model based activity discovery is given by Julia Seiter et al.\cite{seiter2014discovery}.
+
+Similar approaches are also used in mining video stream \cite{wang2009human}.
 
 
 \section{Approach Overview}
@@ -447,7 +453,7 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
          This case takes up to about 30\% in Ubicomp08 dataset and 60\% in PAMAP dataset.
         \item \textbf{Multiple segment to one activity}
         This case often happens to heavily unbalanced data.
-        In Ubicomp08 dataset, ``sitting desk working" takes up over 70\% of the time. Though it occurs at several periods of the day, one period is relatively long. 
+        In Ubicomp08 dataset, ``sitting desk working" takes up over 70\% of the time. Though it occurs at several periods of the day, one period is relatively long.
         Our method often sliced one ``sitting desk working" period into several segments.
         This may due to three reasons.
         (1) The activity is interrupted by some short motions such as 'stand up and go for a drink'.
@@ -463,8 +469,8 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
         This problem is eased by our iterative approach.
         After discovering pattern ``sitting desk working" in the first iteration, we filter this pattern out and start the segmentation process again on the remaining motion-documents.
         On the second iteration, the motion-documents are balanced and our approach are able to segment these short activities successfully.
-        
-        
+
+
     \end{itemize}
 
 
@@ -482,20 +488,20 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
         \end{itemize}
 
     % expermental approach - emphasize that we put the label according to the annotation%
-  
+
      After the system ran on the acceleration data, we compared the discovered patterns with the ground truth annotation, and attached labels for these patterns.
      For each discovered pattern, we attached only one most related label (sometimes ``unknown" for unannotated data).
      The coverage, sensitivity and accuracy metrics are measured based on this label.
-     
+
      In Ubicomp08 dataset, 10 distinct activity patterns (Table \ref{tab: ADL patterns discovered ubicomp}) are discovered in seven days, including ``sitting desk working", ``discussing at whiteboard", ``cycling", ``fanning in barbecue", etc.
      Overall the discovered patterns covers 86\% of the raw data, and the overall recognizing accuracy reaches 75\% sensitivity and 79\% accuracy. Details are discussed in the next paragraph.
-     
+
      In PAMPA dataset, 9 distinct activity patterns (Table \ref{tab: ADL patterns discovered pamap}) and three unknown patterns are discovered, including ``computer work", ``vacuum cleaning", etc.
      Overall the discovered patterns covers 51\% of the raw data, and the overall recognizing accuracy reaches 94\% sensitivity and 86\% accuracy. In our discovered patterns, ``ascending stairs" are confused with ``descending stairs", ``vacuum cleaning" are confused with ``house cleaning", and ``ironing" are confused with ``standing".
-     
-     
+
+
      Table \ref{tab:result-seven-days} shows the detailed mining results on Ubicomp08 dataset.
-     
+
      The result shows the good adaptivity of our scheme to new activity patterns.
      Day-4 seems a outing barbecue day in the dataset. Some barbecue related activities appear only on that day.
      The approach adapts to this phenomenon by successfully discovering pattern "kneeling making fire" and "fanning at barbecue".
@@ -531,10 +537,10 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     \multicolumn{2}{c}{\textbf{Discovered ADL Patterns}} \\
     \midrule
     \multicolumn{1}{l}{Nordic walking} & \multicolumn{1}{l}{Walking} \\
-    \multicolumn{1}{l}{Computer Work} & \multicolumn{1}{l}{Ascending stairs} \\   
+    \multicolumn{1}{l}{Computer Work} & \multicolumn{1}{l}{Ascending stairs} \\
     \multicolumn{1}{l}{Vacuum cleaning} & \multicolumn{1}{l}{Ironing} \\
     \multicolumn{1}{l}{Sitting} & \multicolumn{1}{l}{Standing} \\
-    \multicolumn{1}{l}{Lying}
+    \multicolumn{1}{l}{Lying} &  \multicolumn{1}{l}{} \\
     \bottomrule
     \end{tabular}%
     \caption{ADL patterns discovered in PAMAP dataset}
@@ -605,10 +611,10 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     \subsection{Recognize ADLs}
     \label{subsec.exp.recognize-performance}
     Since a classifier is learnt for each discovered pattern, this classifier could be used to classify new data.
-    
+
     Here we did an experiment to explore the classifying performance of our learnt models.
     The experiment is performed on Ubicomp08 dataset. For seven days, we discovered patterns on each day data and manually attach the labels to the classifier by comparing the classification results to the ground truth annotation. As usual, only one label is attached to one classifier. Then we tested these classifiers on the other six days of data.
-    
+
     Table \ref{tab:model-accuracy} shows the recognizing accuracy of some frequently occurred activities.
     The overall recognizing performance reaches 69\% sensitivity and 78\% accuracy.
 
@@ -627,7 +633,7 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
     \multicolumn{1}{l}{\textbf{Average}} & \textbf{0.69}  & \textbf{0.78}  \\
     \bottomrule
     \end{tabular}%
- 
+
   \caption{Recognizing performance of learned classifiers}
    \label{tab:model-accuracy}%
 \end{table}%
@@ -636,10 +642,10 @@ Pathak et al \cite{wang2009human} uses the similar approach in video stream mini
 \label{sec.conclusion}
 
     In this paper, an unsupervised approach is proposed to discover ADL patterns from acceleration streams from wearable devices.
-    It mines on unlabeled accelaretion data and discover ADL patterns by topic model and semi-supervised training. 
+    It mines on unlabeled accelaretion data and discover ADL patterns by topic model and semi-supervised training.
     The LDA-based segmentation not only cuts the raw stream into segments roughly for pattern discovery, it also measures the similarity between segments based on the distribution of topics.
     Then positive/negative training samples for each pattern (long segment) are generated based on the segmentation result. We trained the discovered pattern with co-training, and user may put a label to the learned classifiers.
-    
+
     Experiments on Ubicomp08 and PAMAP dataset indicates the promising discovering ability and recognizing accuracy of our scheme.
     10 patterns are discovered on Ubicomp08 dataset with 86\% data coverage, 75\% sensitivity and 79\% accuracy.
     9 patterns are discovered on PAMAP dataset with 51\% data coveage, 94\% sensitivity and 86\% accuracy.
